@@ -1,0 +1,32 @@
+.expandable-rows-table {
+    // border-collapse: collapse;
+    max-width: 800px;
+    
+    td, th {
+        // border-top: 1px solid #ccc;
+        // padding: 8px 15px;
+    }
+
+    .expandable-row {
+        height: 0;
+
+        td {
+            padding: 0;
+            border: none;
+            
+            .expandable-content {
+                display: flex;
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 1.4s ease;
+            }
+        }
+
+        &.row-active {
+            .expandable-content {
+                max-height: 999px;
+            }
+        }
+    }
+}
